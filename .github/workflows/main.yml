@@ -18,7 +18,7 @@ jobs:
       - name: Publish image to docker hub
         run: docker push pranavmore913/nodejs-app:latest
   deploy:
-    need: build
+    needs: build
     runs-on: self-hosted
     steps: 
       - name: Pull image from docker hub
