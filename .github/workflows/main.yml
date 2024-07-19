@@ -24,4 +24,4 @@ jobs:
       - name: Pull image from docker hub
         run: docker pull pranavmore913/nodejs-app
       - name: Run docker Container 
-        run: docker run -d -p 5000:4000 --name nodejs-app-container pranavmore913/nodejs-app
+        run: docker run -d -p 5000:4000 pranavmore913/nodejs-app
