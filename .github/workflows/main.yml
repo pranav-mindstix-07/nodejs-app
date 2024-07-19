@@ -1,1 +1,27 @@
-
+name: Deploy node application
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the branch
+        uses: actions/checkout@v4
+      - name: Create .env file
+        run: echo "MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }}" >> .env
+      - name: Login to docker
+        run:  docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build docker image 
+        run: docker build -t pranavmore913/nodejs-app .
+      - name: Publish image to docker hub
+        run: docker push pranavmore913/nodejs-app:latest
+  deploy:
+    need: build
+    runs-on: self-hosted
+    steps: 
+      - name: Pull image from docker hub
+        run: docker pull pranavmore913/nodejs-app
+      - name: Run docker Container 
+        run: docker run -d -p 5000:4000 --name:nodejs-app-container 

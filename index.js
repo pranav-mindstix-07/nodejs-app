@@ -19,7 +19,7 @@ app.use((_req, res, next) => {
 
 // Parses the text as url encoded data
 app.use(bodyParser.urlencoded({ extended: true }));
- 
+
 // Parses the text as json
 app.use(bodyParser.json());
 
