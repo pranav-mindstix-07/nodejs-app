@@ -5,7 +5,7 @@ import User from "./models/user.js";
 import connection from './mongoC.js';
 
 
-const port = 4000;
+const port = 5000;
 const app = express();
 
 connection();
