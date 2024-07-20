@@ -35,7 +35,7 @@ app.post("/adduser", async (req, res) => {
       res.status(201).json({ message: "User added successfully", user: newUser });
     } catch (err) {
         console.log(err,"I am error");
-      res.status(500).json({ message: "Error adding user", error: err.message });
+      res.status(500).json({ message: "Error adding users", error: err.message });
     }
   });
   
