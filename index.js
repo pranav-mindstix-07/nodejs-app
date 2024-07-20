@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.status(200).json({message : 'Hello World, from express'});
+    res.status(200).json({message : 'Hello World, from express okk'});
 })
 
 app.post("/adduser", async (req, res) => {
