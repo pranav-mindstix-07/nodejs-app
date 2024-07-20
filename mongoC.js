@@ -13,7 +13,7 @@ const connection = () => {
       console.log("connected to database");
     })
     .catch((err) => {
-      console.log("error connecting the database");
+      console.log("error connecting the database!");
       console.log(err);
     });
 };
