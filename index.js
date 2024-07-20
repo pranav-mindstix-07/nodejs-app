@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
+  console.log("I am in the get request")
     res.status(200).json({message : 'Hello World, from express okk'});
 })
 
